@@ -114,7 +114,51 @@
 }
 
 /* Widescreens */
+@media screen and (min-width: 1171px) {
+  .about-info {
+    grid-template-areas: "bioimage bio bio" "job1 job2 job3";
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .about-info .bio-image {
+    grid-area: bioimage;
+  }
+  .about-info .bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+  }
+  .about-info .job-1 {
+    grid-area: job1;
+  }
+  .about-info .job-2 {
+    grid-area: job2;
+  }
+  .about-info .job-3 {
+    grid-area: job3;
+  }
+}
 /* Desktops & Laptops */
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .about-info {
+    grid-template-areas: "bioimage bio bio" "job1 job2 job3";
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .about-info .bio-image {
+    grid-area: bioimage;
+  }
+  .about-info .bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+  }
+  .about-info .job-1 {
+    grid-area: job1;
+  }
+  .about-info .job-2 {
+    grid-area: job2;
+  }
+  .about-info .job-3 {
+    grid-area: job3;
+  }
+}
 /* Tablets & Small Laptops */
 @media screen and (max-width: 768px) {
   /* .menu{
@@ -149,6 +193,10 @@
     background: url("../img/portrait_small.jpg");
     width: 150px;
     height: 150px;
+  }
+  .about-info {
+    grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
+    grid-template-columns: 1fr;
   }
 }
 /* Smartphones */
@@ -215,7 +263,7 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%;
+  min-height: calc(100vh - 60px);
 }
 main .icons {
   margin-top: 1rem;
@@ -232,6 +280,54 @@ main#home {
 }
 main#home h1 {
   margin-top: 20vh;
+}
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  /* .bio-image{
+      grid-area: bioimage;
+      display: block;
+      margin: auto;
+      border-radius: 50%;
+      border: $secondary-color 3px solid;
+  }
+
+  .bio {
+      grid-area: bio;
+      font-size: 1.5rem;
+  }
+
+  .job-1{
+      grid-area: job1;
+  }
+
+  .job-2{
+      grid-area: job2;
+  }
+
+  .job-3{
+      grid-area: job3;
+  } */
+}
+.about-info .bio-image {
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+  border: #eece1a 3px solid;
+}
+.about-info .job {
+  background: rgb(80.75, 80.75, 80.75);
+  padding: 0.5rem;
+  border-bottom: #eece1a 5px solid;
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: rgb(42.5, 42.5, 42.5);
+  color: #fff;
+  height: 60px;
 }
 
 /*# sourceMappingURL=main.css.map */

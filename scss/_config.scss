@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 $primary-color: #444;
 $secondary-color: #eece1a;
 
@@ -13,6 +15,7 @@ $background-opacity: 0.9;
     @if $show-home-image{
         &#bg-img{
             background: $home-image;
+            // background: red;
             background-attachment: fixed;
             background-size: cover;
             
@@ -26,6 +29,40 @@ $background-opacity: 0.9;
                 z-index: -1;
                 background: rgba($primary-color, $background-opacity);
             }
+        }
+    }
+}
+
+@mixin allLargeAbout{
+    .about-info{
+        grid-template-areas: 
+        'bioimage bio bio'
+        'job1 job2 job3';
+        grid-template-columns: repeat(3, 1fr);
+        
+        .bio-image{
+            grid-area: bioimage;
+            // display: block;
+            // margin: auto;
+            // border-radius: 50%;
+            // border: $secondary-color 3px solid;
+        }
+        
+        .bio {
+            grid-area: bio;
+            font-size: 1.5rem;
+        }
+        
+        .job-1{
+            grid-area: job1;
+        }
+        
+        .job-2{
+            grid-area: job2;
+        }
+        
+        .job-3{
+            grid-area: job3;
         }
     }
 }
@@ -52,5 +89,15 @@ $background-opacity: 0.9;
 @mixin mediaXl{
     @media screen and (min-width: 1171px){
         @content;
+    }
+}
+
+// Set Text Color
+@function set-text-color($color){
+    // @if(lightness($color) > 40){
+    @if($color == up){
+        @return #000;
+    }@else{
+        @return #fff;
     }
 }

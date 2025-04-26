@@ -2,12 +2,12 @@
 
 /* Widescreens */
 @include mediaXl{
-
+    @include allLargeAbout;
 }
 
 /* Desktops & Laptops */
 @include mediaLg{
-
+    @include allLargeAbout;
 }
 
 /* Tablets & Small Laptops */
@@ -46,7 +46,6 @@
     .menu-branding{
         height: 25vh;
         transform: translate3d(100%, 0, 0);
-        // background-color: red;
 
         .portrait{
             background: url('../img/portrait_small.jpg');
@@ -54,6 +53,18 @@
             height: 150px;
         }
     }
+
+    .about-info{
+        // background-color: red;
+        grid-template-areas:
+        'bioimage'
+        'bio'
+        'job1'
+        'job2'
+        'job3';
+        
+        grid-template-columns: 1fr;
+    }  
 }
 
 /* Smartphones */
