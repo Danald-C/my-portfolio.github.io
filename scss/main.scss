@@ -27,7 +27,6 @@ h1, h2, h3{
     &.sm-heading{
         margin-bottom: 2rem;
         padding: 0.2rem 1rem;
-        // background: rgba(lighten($primary-color, 2), 0.5);
         background: rgba(color.adjust($primary-color, $lightness: 2%), 0.5);
     }
 }
@@ -44,7 +43,7 @@ header{
 }
 
 .text-secondary{
-    color: $secondary-color
+    color: $secondary-color;
 }
 
 main{
@@ -56,11 +55,11 @@ main{
         margin-top: 1rem;
         
         a{
-            padding: 0x4rem;
+            padding: 0.4rem;
+            @include easeOut();
             
             &:hover{
                 color: $secondary-color;
-                @include easeOut();
             }
         }
     }
@@ -82,11 +81,23 @@ main{
     // 'job1 job2 job3';
     // grid-template-columns: repeat(3, 1fr);
     
-    .bio-image{
-        display: block;
+    .bio-image-container{
+        /* display: block;
         margin: auto;
         border-radius: 50%;
-        border: $secondary-color 3px solid;
+        border: $secondary-color 3px solid; */
+        
+        .bio-image{
+            display: block;
+            background-image:  url('../img/my-portrait.jpg');
+            // background-position: -20% -20%;
+            background-size: cover;
+            width: 30%;
+            height: 100%;
+            margin: 0 auto;
+            border: $secondary-color 3px solid;
+            border-radius: 50%;
+        }
     }
     /* .bio-image{
         grid-area: bioimage;

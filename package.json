@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "Responsive Portfolio Website",
   "main": "index.js",
+  "homepage": "https://danald-c.github.io/my-portfolio.github.io/",
   "scripts": {
-    "sass": "sass -w scss/:dist/css/"
+    "sass": "sass -w scss/:dist/css/",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "David Kwadwo Sarfroh Danquah",
   "license": "ISC",
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "sass": "^1.87.0"
   }
 }
