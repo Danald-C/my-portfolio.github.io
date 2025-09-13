@@ -114,27 +114,86 @@
   transition-delay: 0.4s;
 }
 
+.nav-item:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
 /* Widescreens */
 @media screen and (min-width: 1171px) {
-  .about-info {
+  main#about .about-info {
     grid-template-areas: "bioimage bio bio" "job1 job2 job3";
     grid-template-columns: repeat(3, 1fr);
   }
-  .about-info .bio-image {
+  main#about .about-info .bio-image {
     grid-area: bioimage;
   }
-  .about-info .bio {
+  main#about .about-info .bio {
     grid-area: bio;
     font-size: 1.5rem;
   }
-  .about-info .job-1 {
+  main#about .about-info .job-1 {
     grid-area: job1;
   }
-  .about-info .job-2 {
+  main#about .about-info .job-2 {
     grid-area: job2;
   }
-  .about-info .job-3 {
+  main#about .about-info .job-3 {
     grid-area: job3;
+  }
+  main#about #pitch-video {
+    margin: 20px 0;
+    text-align: center;
+  }
+  main#about #pitch-video iframe {
+    width: 620px;
+    height: 440px;
+    border: 3px solid #eece1a;
+    border-radius: 10px;
+  }
+  main#about #pitch-video span {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    /* a.internal-link{
+        color: $secondary-color;
+        text-decoration: none;
+        border-bottom: 1px dashed $secondary-color;
+
+        &:hover{
+            color: lighten($secondary-color, 10%);
+            border-bottom: 1px solid lighten($secondary-color, 10%);
+        }
+    } */
+  }
+  main#services .services {
+    /* background-image: url('../img/services-bg.jpg');
+    background-repeat: no-repeat;
+    padding: 20px;
+    border: 3px solid $secondary-color; */
+  }
+  main#services .services div {
+    float: left;
+    height: 300px;
+  }
+  main#services .services div:nth-child(1) {
+    font-size: 2.2rem;
+    width: 32%;
+    align-items: center;
+  }
+  main#services .services div:nth-child(1) h2 {
+    background: rgba(73.1, 73.1, 73.1, 0.3);
+    padding: 10px;
+  }
+  main#services .services div:nth-child(2) {
+    margin: 0 0 0 80px;
+    width: 60%;
+  }
+  main#services .services div:nth-child(2) span {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 0 100px 20px 0;
+    padding: 10px;
+    border: 1px #eece1a solid;
   }
   .projects {
     grid-template-columns: repeat(4, 1fr);
@@ -142,25 +201,71 @@
 }
 /* Desktops & Laptops */
 @media screen and (min-width: 769px) and (max-width: 1170px) {
-  .about-info {
+  main#about .about-info {
     grid-template-areas: "bioimage bio bio" "job1 job2 job3";
     grid-template-columns: repeat(3, 1fr);
   }
-  .about-info .bio-image {
+  main#about .about-info .bio-image {
     grid-area: bioimage;
   }
-  .about-info .bio {
+  main#about .about-info .bio {
     grid-area: bio;
     font-size: 1.5rem;
   }
-  .about-info .job-1 {
+  main#about .about-info .job-1 {
     grid-area: job1;
   }
-  .about-info .job-2 {
+  main#about .about-info .job-2 {
     grid-area: job2;
   }
-  .about-info .job-3 {
+  main#about .about-info .job-3 {
     grid-area: job3;
+  }
+  main#about #pitch-video {
+    margin: 20px 0;
+    text-align: center;
+  }
+  main#about #pitch-video iframe {
+    width: 620px;
+    height: 440px;
+    border: 3px solid #eece1a;
+    border-radius: 10px;
+  }
+  main#about #pitch-video span {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    /* a.internal-link{
+        color: $secondary-color;
+        text-decoration: none;
+        border-bottom: 1px dashed $secondary-color;
+
+        &:hover{
+            color: lighten($secondary-color, 10%);
+            border-bottom: 1px solid lighten($secondary-color, 10%);
+        }
+    } */
+  }
+  main#services .services div {
+    height: 300px;
+  }
+  main#services .services div:nth-child(1) {
+    font-size: 2.5rem;
+    /* h2{
+        background: rgba(color.adjust($primary-color, $lightness: 2%), 0.3);
+        padding: 10px;
+        text-align: center;
+    } */
+  }
+  main#services .services div:nth-child(2) {
+    margin: 50px 0 0 0;
+  }
+  main#services .services div:nth-child(2) span {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 0 20px 20px 0;
+    padding: 10px;
+    border: 1px #eece1a solid;
   }
   .projects {
     grid-template-columns: repeat(3, 1fr);
@@ -171,6 +276,23 @@
   /* .menu{
       background-color: red;
   } */
+  main#services .services div {
+    height: 300px;
+  }
+  main#services .services div:nth-child(1) {
+    font-size: 2rem;
+  }
+  main#services .services div:nth-child(2) {
+    margin: 50px 0 0 0;
+    height: auto;
+  }
+  main#services .services div:nth-child(2) span {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 0 10px 15px 0;
+    padding: 10px;
+    border: 1px #eece1a solid;
+  }
   main {
     align-items: center;
     text-align: center;
@@ -178,6 +300,10 @@
   main .lg-heading {
     line-height: 1;
     margin-bottom: 1rem;
+  }
+  main#about .about-info {
+    grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
+    grid-template-columns: 1fr;
   }
   ul.menu-nav, div.menu-branding {
     float: none;
@@ -202,16 +328,26 @@
     width: 150px;
     height: 150px;
   }
-  .about-info {
-    grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
-    grid-template-columns: 1fr;
-  }
   .projects {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 /* Smartphones */
 @media screen and (max-width: 500px) {
+  main#services .services div:nth-child(1) {
+    font-size: 1.5rem;
+  }
+  main#services .services div:nth-child(2) {
+    margin: 50px 0 0 0;
+    height: auto;
+  }
+  main#services .services div:nth-child(2) span {
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0 5px 10px 0;
+    padding: 5px;
+    border: 1px #eece1a solid;
+  }
   main#home h1 {
     margin-top: 10vh;
   }
@@ -275,6 +411,16 @@ header {
   color: #eece1a;
 }
 
+.internal-link {
+  color: #eece1a;
+  text-decoration: none;
+  border-bottom: 1px dashed #eece1a;
+}
+.internal-link:hover {
+  color: rgb(241.5243902439, 216.1585365854, 73.4756097561);
+  border-bottom: 1px solid rgb(241.5243902439, 216.1585365854, 73.4756097561);
+}
+
 main {
   padding: 4rem;
   min-height: calc(100vh - 60px);
@@ -294,6 +440,20 @@ main#home {
 }
 main#home h1 {
   margin-top: 20vh;
+}
+main#services .services {
+  background-image: url("../img/services-bg.jpg");
+  background-repeat: no-repeat;
+  padding: 20px;
+  border: 3px solid #eece1a;
+}
+main#services .services div:nth-child(1) {
+  align-items: center;
+}
+main#services .services div:nth-child(1) h2 {
+  background: rgba(73.1, 73.1, 73.1, 0.3);
+  padding: 10px;
+  text-align: center;
 }
 
 .about-info {

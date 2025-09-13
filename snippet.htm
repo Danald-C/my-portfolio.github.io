@@ -1,0 +1,118 @@
+<div w3-include-html="content.html"></div>
+<div w3-include-html="h1.html"></div> 
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /* Loop through a collection of all HTML elements: */
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /* Make an HTTP request using the attribute value as the file name: */
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /* Remove the attribute, and call this function once more: */
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /* Exit the function: */
+      return;
+    }
+  }
+}
+</script>
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
+</script>
+<script>
+includeHTML();
+</script>
+
+
+
+
+
+
+
+<button onclick="showContent()">Show hidden content</button>
+
+<template>
+  <h2>Flower</h2>
+  <img src="img_white_flower.jpg" width="214" height="204">
+</template>
+
+<script>
+function showContent() {
+  let temp = document.getElementsByTagName("template")[0];
+  let clon = temp.content.cloneNode(true);
+  document.body.appendChild(clon);
+}
+</script>
+
+<button onclick="showContent()">Show hidden content</button>
+
+<template>
+  <div class="myClass">I like: </div>
+</template>
+
+<script>
+let myArr = ["Audi", "BMW", "Ford", "Honda", "Jaguar", "Nissan"];
+
+function showContent() {
+  let temp, item, a, i;
+  temp = document.getElementsByTagName("template")[0];
+  //get the div element from the template:
+  item = temp.content.querySelector("div");
+  //for each item in the array:
+  for (i = 0; i < myArr.length; i++) {
+    //Create a new node, based on the template:
+    a = document.importNode(item, true);
+    //Add data from the array:
+    a.textContent += myArr[i];
+    //append the new node wherever you like:
+    document.body.appendChild(a);
+  }
+}
+</script>
+
+<script>
+if (document.createElement("template").content) {
+  document.write("Your browser supports template!");
+} else {
+  document.write("Your browser does not supports template!");
+}
+</script>
